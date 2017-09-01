@@ -11,7 +11,7 @@
     <header>
         <h1>Alfonso Torres</h1>
     </header>
-    <p><a href="/alftorres/labs/lab1/HomePage.php">Home</a>
+    <p><a href="/alftorres/labs/lab1/homePage.php">Home</a>
     About 
     <a href="/alftorres/labs/lab1/Contact.php">Contact</a></p>
   
