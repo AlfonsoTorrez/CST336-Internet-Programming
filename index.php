@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
+        <meta charset="utf-8"/>
+        <title>Welcome Page!</title>
     </head>
     <body>
-    <a href="http://alftorres-cst336.herokuapp.com/labs/lab1/homePage.html" >Home</a>
+        <a href="http://alftorres-cst336.herokuapp.com/labs/lab1/homePage.html" >Welcome!</a>
     </body>
 </html>
