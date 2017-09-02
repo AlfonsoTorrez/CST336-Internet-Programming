@@ -4,6 +4,6 @@
         <title></title>
     </head>
     <body>
-    <p>Welcome!</p>
+    <a href="http://alftorres-cst336.herokuapp.com/labs/lab1/homePage.html" >Home</a>
     </body>
 </html>
