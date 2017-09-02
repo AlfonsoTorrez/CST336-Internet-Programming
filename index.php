@@ -4,6 +4,6 @@
         <title></title>
     </head>
     <body>
-    <a href="/alftorres/labs/lab1/homePage.html" >Welcome!</a>
+    <p>Welcome!</p>
     </body>
 </html>
