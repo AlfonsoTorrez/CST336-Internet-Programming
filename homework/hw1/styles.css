@@ -39,7 +39,11 @@ div {
 }
 
 .youngStudents{
-    text-align: right; 
+    text-align: right;
+}
+
+.happyStudent{
+    text-align: center; 
 }
 .info{
     text-align: left; 
