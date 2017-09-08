@@ -1,0 +1,76 @@
+header{
+    font-size: 2em; 
+    font-family: 'montserrat'; 
+    text-align: center; 
+}
+
+body{
+    background-image: url(/alftorres/homework/hw1/images/School.jpeg); 
+    color:black;
+}
+
+nav a{  /* links within "nav" container */ 
+    padding:15px; 
+    padding-bottom:4px; 
+    font-size: 1.5em; 
+    text-decoration: none; /*removes underline*/
+    color:#805002;          /* by default, links are blue */ 
+}
+
+nav a:hover { /*pseudo class*/
+    border-bottom:2px brown solid; 
+    font-size: 1.6em; 
+    transition: .1s; /* transition effect */ 
+}
+
+div {
+    font-size: 1.5em; 
+    text-align: center; 
+}
+
+.begining{
+    text-align: center;
+    font-size: x-large; 
+    padding-bottom: 180px; 
+} 
+
+.info{
+    text-align: left; 
+    color: white; 
+    background-color: black; 
+    opacity: .5; 
+}
+
+.list{
+    text-align: left;
+    color: white; 
+    background-color: black; 
+    opacity: .5; 
+}
+
+.overview{
+     border-bottom:2px brown solid; 
+}
+
+.pros{
+     border-bottom:2px brown solid; 
+}
+
+.cons{
+     border-bottom:2px brown solid; 
+}
+
+.sources{
+     border-bottom:2px brown solid; 
+}
+
+footer{
+    text-align: center; 
+    font-size: .5em; 
+    clear:left;
+    color: black; 
+}
+
+iframe{
+    background:white;
+}
