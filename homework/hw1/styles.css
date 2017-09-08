@@ -45,6 +45,11 @@ div {
 .happyStudent{
     text-align: center; 
 }
+
+.sadStudent{
+    text-align: center; 
+}
+
 .info{
     text-align: left; 
     color: white; 
