@@ -34,6 +34,13 @@ div {
     padding-bottom: 180px; 
 } 
 
+.codeImage{
+    text-align: left; 
+}
+
+.youngStudents{
+    text-align: right; 
+}
 .info{
     text-align: left; 
     color: white; 
