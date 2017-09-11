@@ -1,12 +1,14 @@
 <?php 
-    include '/home/ubuntu/workspace/alftorres/inc/functions.php'; 
+    include 'http://alftorres-cst336.herokuapp.com/inc/functions.php'; 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <title> 777 Slot Machine </title>
         <meta charset="utf-8"/>
-        <link href="http://alftorres-cst336.herokuapp.com/labs/lab2/css/styles.css" rel="stylesheet" type="text/css" /> 
+        <style> 
+            @import url("http://alftorres-cst336.herokuapp.com/labs/lab2/css/styles.css"); 
+        </style>
     </head>
     
     <body>
