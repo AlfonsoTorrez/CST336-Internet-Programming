@@ -7,6 +7,6 @@
     <body>
         <a href="http://alftorres-cst336.herokuapp.com/labs/lab1/homePage.html" >Lab1</a>
         <br>
-        <a href="http://alftorres-cst336.herokuapp.com/labs/lab2/index.php" >Lab2!</a>
+        <a href="http://alftorres-cst336.herokuapp.com/labs/lab2/index.html" >Lab2!</a>
     </body>
 </html>
