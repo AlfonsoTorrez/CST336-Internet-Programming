@@ -1,5 +1,5 @@
 <?php 
-    include 'http://alftorres-cst336.herokuapp.com/labs/lab2/inc/functions.php'; 
+    include '/home/ubuntu/workspace/alftorres/labs/lab2/inc/functions.php'; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +7,7 @@
         <title> 777 Slot Machine </title>
         <meta charset="utf-8"/>
         <style> 
-            @import url("http://alftorres-cst336.herokuapp.com/labs/lab2/css/styles.css"); 
+            @import url("css/styles.css"); 
         </style>
     </head>
     
