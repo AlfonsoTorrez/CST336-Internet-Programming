@@ -1,5 +1,5 @@
 <?php 
-    include 'http://alftorres-cst336.herokuapp.com/labs/lab2/inc/functions.php'; 
+    include '/home/ubuntu/workspace/alftorres/labs/lab2/inc/functions.php'; 
 ?>
 <!DOCTYPE html>
 <html>
