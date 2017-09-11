@@ -47,9 +47,9 @@
                         break; 
                         
             }
-                echo "<img id='reel1' src='..img/$symbol1.png' alt='$symbol1 Image' title='$symbol1' width='70'/>";  
-                echo "<img id='reel2' src='..img/$symbol2.png' alt='$symbol2 Image' title='$symbol2' width='70'/>"; 
-                echo "<img id='reel3' src='..img/$symbol3.png' alt='$symbol3 Image' title='$symbol3' width='70'/>"; 
+                echo "<img id='reel1' src='http://alftorres-cst336.herokuapp.com/labs/lab2/img/$symbol1.png' alt='$symbol1 Image' title='$symbol1' width='70'/>";  
+                echo "<img id='reel2' src='http://alftorres-cst336.herokuapp.com/labs/lab2/img/$symbol2.png' alt='$symbol2 Image' title='$symbol2' width='70'/>"; 
+                echo "<img id='reel3' src='http://alftorres-cst336.herokuapp.com/labs/lab2/img/$symbol3.png' alt='$symbol3 Image' title='$symbol3' width='70'/>"; 
         }
         
         function displayPoints($randomValue1,$randomValue2,$randomValue3){
