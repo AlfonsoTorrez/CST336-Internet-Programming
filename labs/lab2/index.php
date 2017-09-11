@@ -1,5 +1,5 @@
 <?php 
-    include '/home/ubuntu/workspace/alftorres/labs/lab2/inc/functions.php'; 
+    include 'http://alftorres-cst336.herokuapp.com/labs/lab2/inc/functions.php'; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,14 +13,14 @@
     
     <body>
         <header>
-        <p class="rules"> <u>Rules</u>:<br>
-            <u>Set of 7's</u>: 1000 points <br>
-            <u>Set of Bar's</u>: 500 points <br>
-            <u>Set of Cherries</u>: 250 points <br>
-            <u>Set of Grapes</u>: 150 points <br>
-            <u>Set of Oranges</u>: 75 points <br>
-            <u>Set of Lemons</u>: 25 points <br>
-        </p>
+            <p class="rules"> <u>Rules</u>:<br>
+                <u>Set of 7's</u>: 1000 points <br>
+                <u>Set of Bar's</u>: 500 points <br>
+                <u>Set of Cherries</u>: 250 points <br>
+                <u>Set of Grapes</u>: 150 points <br>
+                <u>Set of Oranges</u>: 75 points <br>
+                <u>Set of Lemons</u>: 25 points <br>
+            </p>
         </header>
         <div id="main"> 
             <?php
