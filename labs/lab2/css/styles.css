@@ -6,14 +6,14 @@
     
     body {
         background-color: black;
-        background-image:url("http://alftorres-cst336.herokuapp.com/labs/lab2/img/bg7.jpg");
+        /*background-image:url("http://alftorres-cst336.herokuapp.com/labs/lab2/img/bg7.jpg");*/
         color: white;
         
     }
     
     #main {
         font-family: 'Baloo Bhaina', cursive;
-        background-image:url("http://alftorres-cst336.herokuapp.com/labs/lab2/img/machine.png");
+        /*background-image:url("http://alftorres-cst336.herokuapp.com/labs/lab2/img/machine.png");*/
         width:600px;
         height:500px;
         position:relative;
