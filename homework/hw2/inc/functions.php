@@ -4,7 +4,7 @@
     $e = 11; 
     
     function randomPicture(){
-        $random = rand(0,11); 
+        $random = rand(0,10); 
         if($size==$e){
             for ($i = 0; $i < 11; $i++){
                 $slothArr[$i] = "<img id='sloth' src=img/sloth$i.jpg alt='Sloth Picture' >"; 
@@ -28,7 +28,7 @@
     
     function randomFact(){
         
-        $random = rand(0,11); 
+        $random = rand(0,10); 
 
         if($size2==$e){
             for ($i = 0; $i < 11; $i++){
