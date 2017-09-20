@@ -7,7 +7,7 @@
         <meta charset="utf-8"/>
         <title>Random Sloths</title>
         <style> 
-            @import url("http://alftorres-cst336.herokuapp.com/homework/hw2/css/styles.css"); 
+            @import url("css/styles.css"); 
         </style>
     </head>
     <body>
