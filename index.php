@@ -11,5 +11,7 @@
         <a href="http://alftorres-cst336.herokuapp.com/homework/hw1/teachingCS.html" >Homework1</a>
         <br>
         <a href="http://alftorres-cst336.herokuapp.com/labs/lab2/index.php" >Lab2</a>
+        <br>
+        <a href="http://alftorres-cst336.herokuapp.com/labs/lab3/index.php" >Lab3</a>
     </body>
 </html>
