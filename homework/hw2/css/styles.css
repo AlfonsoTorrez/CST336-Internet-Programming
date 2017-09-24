@@ -11,6 +11,11 @@ div{
     text-align: center; 
 }
 
+img {
+    border: 10px solid black; 
+    border-radius: 20px; 
+}
+
 #randButton{
         text-align: center; 
         font-size:1em;

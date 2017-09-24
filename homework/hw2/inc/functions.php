@@ -7,7 +7,7 @@
         $random = rand(0,10); 
         if($size==$e){
             for ($i = 0; $i < 11; $i++){
-                $slothArr[$i] = "<img id='sloth' src=img/sloth$i.jpg alt='Sloth Picture' >"; 
+                $slothArr[$i] = "<img src='img/sloth$i.jpg' alt='Sloth Picture' >"; 
             } 
             echo $slothArr[$random];
             array_splice($slothArr,$random,1); 
