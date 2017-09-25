@@ -1,0 +1,43 @@
+body {
+    background-color: Black;
+    color:white;
+}
+
+header{
+    font-family: 'Lora' ,cursive; 
+}
+header, nav, footer {
+    text-align: center;  
+}
+
+nav a {  /* links within "nav" container */ 
+    padding:15px; 
+    padding-bottom:4px; 
+    font-size: 1.8em; 
+    text-decoration: none; /*removes underline*/
+    color:white;          /* by default, links are blue */ 
+    font-family: 'Lora' ,cursive; 
+}
+
+nav a:hover { /*pseudo class*/
+    border-bottom:2px white solid; 
+    font-size: 2em; 
+    transition: .1s; /* transition effect */ 
+}
+
+table {
+    margin: 0px auto;
+}
+td{
+    padding-right: 10px;
+    font-size:1.3em;
+}
+td strong{
+    color:orange;
+}
+
+footer{
+    font-size: .5em; 
+    clear:left;
+    color: grey; 
+}
