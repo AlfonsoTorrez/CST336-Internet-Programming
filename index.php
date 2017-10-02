@@ -18,7 +18,7 @@
             <br> 
             <a href="http://alftorres-cst336.herokuapp.com/labs/lab3/index.php" >Lab 3</a>
             <br>
-            <a href="http://alftorres-cst336.herokuapp.com/labs/lab4/main.php" >Lab 4</a>
+            <a href="http://alftorres-cst336.herokuapp.com/labs/lab4/Slider/main.php" >Lab 4</a>
             <br>
         </nav>
         
