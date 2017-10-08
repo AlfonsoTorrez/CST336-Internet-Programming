@@ -37,10 +37,13 @@ $cfg['Servers'][$i]['AllowNoPassword'] = false;
  */
 
 /* User used to manipulate with storage */
-// $cfg['Servers'][$i]['controlhost'] = '';
-// $cfg['Servers'][$i]['controlport'] = '';
-// $cfg['Servers'][$i]['controluser'] = 'pma';
-// $cfg['Servers'][$i]['controlpass'] = 'pmapass';
+//$cfg['Servers'][$i]['auth_type'] = 'config';
+//$cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-05.cleardb.net';
+//$cfg['Servers'][$i]['user'] = 'bc84338c545651';
+//$cfg['Servers'][$i]['password'] = '06d1624f';
+//$cfg['Servers'][$i]['compress'] = false;
+//$cfg['Servers'][$i]['AllowNoPassword'] = false;
+
 
 /* Storage database and tables */
 // $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
