@@ -12,6 +12,8 @@
             <br>
             <a href="http://alftorres-cst336.herokuapp.com/homework/hw2/randomFacts.php">Homework 2</a>
             <br>
+            <a href="http://alftorres-cst336.herokuapp.com/homework/hw3/index.php">Homework 3</a>
+            <br>
             <a href="http://alftorres-cst336.herokuapp.com/labs/lab1/homePage.html" >Lab 1</a>
             <br>
             <a href="http://alftorres-cst336.herokuapp.com/labs/lab2/index.php" >Lab 2</a>

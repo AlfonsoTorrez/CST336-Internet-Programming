@@ -1,5 +1,27 @@
-h1{
+header{
     text-align: center; 
+}
+body{
+    background-image: url("http://alftorres-cst336.herokuapp.com/homework/hw3/img/school.jpg"); 
+    font-weight: bold;
+}
+h1{
+    display: inline; 
+    text-align: center; 
+    font-size: 45px; 
+    font-family: 'Coming Soon', cursive;
+}
+
+form{
+    text-align: center; 
+}
+
+textbox{
+    width: 200px;
+}
+
+button{
+    width: 200px;
 }
 
 footer{
