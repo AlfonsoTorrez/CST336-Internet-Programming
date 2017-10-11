@@ -3,6 +3,8 @@ header{
 }
 #index{
     background-image: url("http://alftorres-cst336.herokuapp.com/homework/hw3/img/school.jpg"); 
+    background-repeat: no-repeat; 
+    background-size: cover; 
     font-weight: bolder;
     font-size: 25px;
     color: black;
