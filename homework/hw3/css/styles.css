@@ -1,9 +1,16 @@
 header{
     text-align: center; 
 }
-body{
+#index{
     background-image: url("http://alftorres-cst336.herokuapp.com/homework/hw3/img/school.jpg"); 
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 25px;
+    color: black;
+}
+
+#print{
+    text-align: center;
+    font-size: x-large; 
 }
 h1{
     display: inline; 
@@ -12,18 +19,43 @@ h1{
     font-family: 'Coming Soon', cursive;
 }
 
+
 form{
     text-align: center; 
 }
 
-textbox{
-    width: 200px;
+input[name=submit] {
+    width: 15em;  
+    height: 2.5em;
+}
+input[name=print] {
+    width: 15em;  
+    height: 2.5em;
+}
+input[name=reset] {
+    width: 15em;  
+    height: 2.5em;
 }
 
-button{
+textbox1{
     width: 200px;
 }
+textbox2{
+    width: 200px;
+}
+textbox3{
+    width: 200px;
+}
+div{
+    font-size: x-large; 
+    text-align: center; 
+}
 
+a{
+    font-size: 20px; 
+    font-size: x-large; 
+    color:#ccccff;
+}
 footer{
     text-align: center; 
 }
