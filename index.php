@@ -22,6 +22,7 @@
             <br>
             <a href="http://alftorres-cst336.herokuapp.com/labs/lab4/Slider/main.php" >Lab 4</a>
             <br>
+            <a href="http://alftorres-cst336.herokuapp.com/labs/lab5/index.php" >Lab 5</a>
         </nav>
         
         <footer>
