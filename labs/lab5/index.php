@@ -32,8 +32,12 @@ function getDeviceTypes() {
 <html>
     <head>
         <title> Device Center </title>
+        <meta charset="utf-8"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <h1>Device Center</h1>
+        
         <form>
             <?=getDeviceTypes()?>
         </form>
