@@ -3,3 +3,12 @@ h1{
     font-size: 50px; 
     text-align: center;
 }
+
+body{
+    background-color: lightblue;
+    text-align: center; 
+}
+
+#deviceInfo{
+    text-align: left; 
+}
