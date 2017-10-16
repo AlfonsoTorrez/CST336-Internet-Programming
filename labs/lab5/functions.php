@@ -140,4 +140,47 @@ function filterByName($name){
     }
 }
 
+function filterByTypeNorP($a){
+    global $conn;
+    global $deviceId;
+    global $deviceName;
+    global $deviceType;
+    global $devicePrice;
+    global $deviceStatus; 
+    $deviceId1;
+    $deviceName1;
+    $deviceType1;
+    $devicePrice1;
+    $deviceStatus1; 
+    
+    if($a=="name"){
+        for($i=0; $i<sizeof($deviceType); $i++){
+                echo "NAME:$deviceName[$i] ----- ID:$deviceId[$i] ----- TYPE:$deviceType[$i] ----- PRICE:$devicePrice[$i] ----- STATUS:$deviceStatus[$i]";
+                echo "<br>";
+        }
+    }
+    else if($a=="price") {
+        
+        $sql = "SELECT deviceName, deviceType, deviceId, price, status FROM `tc_device` ORDER BY `tc_device`.`price` ASC";
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+        foreach ($records as $record) {
+            $deviceName1[] = $record['deviceName'];
+            $deviceType1[] = $record['deviceType'];
+            $deviceId1[] = $record['deviceId'];
+            $devicePrice1[] = $record['price'];
+            $deviceStatus1[] = $record['status'];
+        }
+        
+        for($i=0; $i<sizeof($deviceType); $i++){
+            echo "NAME:$deviceName1[$i] ----- ID:$deviceId1[$i] ----- TYPE:$deviceType1[$i] ----- PRICE:$devicePrice1[$i] ----- STATUS:$deviceStatus1[$i]";
+            echo "<br>";
+        }
+        
+    }
+}
+
 ?> 

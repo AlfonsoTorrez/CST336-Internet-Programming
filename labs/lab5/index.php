@@ -88,20 +88,20 @@ include 'functions.php';
             ?> 
         
             Devices Filtered By Name or Price: 
-            <select name="deviceAvailability">
+            <select name="deviceNorP">
                 <option value="" >Select One</option>
-                <option value="y" >Available</option>
-                <option value="n" >Not Available</option>
+                <option value="name" >Name</option>
+                <option value="price" >Price</option>
             </select>
             <br></br>
             <input type="submit" name="submit" value="Submit">
             <br></br>
             
             <?php
-                if(isset($_GET['submit']) && $_GET['deviceAvailability']!==""){
-                    $a = $_GET['deviceAvailability']; 
-                    echo '<h3>Devices Filterd By: Availability</h3>';
-                    filterByTypeA($a); 
+                if(isset($_GET['submit']) && $_GET['deviceNorP']!==""){
+                    $a = $_GET['deviceNorP']; 
+                    echo '<h3>Devices Filterd By: Name or Price</h3>';
+                    filterByTypeNorP($a); 
                     echo '<br></br>';
                 }
             ?> 
