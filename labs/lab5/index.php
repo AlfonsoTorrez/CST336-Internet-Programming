@@ -71,7 +71,7 @@ include 'functions.php';
         Filter Devices By Availability: 
             <select name="deviceAvailability">
                 <option value="" >Select One</option>
-                <option value="" >Available</option>
+                <option value="y" >Available</option>
                 <option value="n" >Not Available</option>
             </select>
             <br></br>
@@ -87,7 +87,33 @@ include 'functions.php';
                 }
             ?> 
         
-
+            Devices Filtered By Name or Price: 
+            <select name="deviceAvailability">
+                <option value="" >Select One</option>
+                <option value="y" >Available</option>
+                <option value="n" >Not Available</option>
+            </select>
+            <br></br>
+            <input type="submit" name="submit" value="Submit">
+            <br></br>
+            
+            <?php
+                if(isset($_GET['submit']) && $_GET['deviceAvailability']!==""){
+                    $a = $_GET['deviceAvailability']; 
+                    echo '<h3>Devices Filterd By: Availability</h3>';
+                    filterByTypeA($a); 
+                    echo '<br></br>';
+                }
+            ?> 
+        
         </form>
+        
+        <footer> 
+        <hr>
+        CST 336, 2017 &copy; Torres <br /> 
+        <strong>Disclaimer:</strong> The information on this webpage is fictitous.<br /> 
+        Its is used for academic purpose.<br />
+        <img src="css/CSUMBLogoBlue.png" alt="CSUMB Logo">
+    </footer>
     </body>
 </html>

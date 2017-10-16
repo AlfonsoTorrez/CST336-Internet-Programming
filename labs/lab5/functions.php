@@ -70,6 +70,11 @@ function getDeviceNamesInOrder(){
 }
 
 function getDeviceById($Id){
+    global $deviceId;
+    global $deviceName;
+    global $deviceType;
+    global $devicePrice;
+    global $deviceStatus; 
     
     for($i=0; $i<sizeof($deviceType); $i++){
         if($deviceId[$i]==$Id){
@@ -80,16 +85,24 @@ function getDeviceById($Id){
 }
 
 function filterByTypeA($a){
+    global $deviceId;
+    global $deviceType; 
+    global $cReturnDate; 
+    global $cId;
+    
     if($a=="y"){
         for($i=0; $i<sizeof($deviceType); $i++){
-            if($deviceId[$i]==$Id){
-                echo "ID:$deviceId[$i] ----- NAME:$deviceName[$i] ----- TYPE:$deviceType[$i] ----- PRICE:$devicePrice[$i] ----- STATUS:$deviceStatus[$i]";
-                echo "<br>";
+            if(!is_null($cReturnDate[$i])){
+                getDeviceById($cId[$i]); 
             }
         }
     }
     else if($a=="n"){
-        
+        for($i=0; $i<sizeof($deviceType); $i++){
+            if(is_null($cReturnDate[$i])){
+                getDeviceById($cId[$i]); 
+            }
+        }
     }
 }
 
