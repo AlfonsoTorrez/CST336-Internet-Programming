@@ -38,6 +38,7 @@ function setDeviceInfo() {
     $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
     
     foreach ($records as $record) {
+
         $deviceName[] = $record['deviceName'];
         $deviceType[] = $record['deviceType'];
         $deviceId[] = $record['deviceId'];

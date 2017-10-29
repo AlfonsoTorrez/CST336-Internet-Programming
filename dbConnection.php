@@ -6,7 +6,12 @@ function getDatabaseConnection(){
     $dbname = 'heroku_5cc899d91ebdb63';
     $username = 'bc84338c545651';
     $password = '06d1624f';
-    
+    /*
+    $host = 'localhost';//cloud 9
+    $dbname = 'tcp';
+    $username = 'root';
+    $password = '';
+    */
     //using different database variables in Heroku
     //if  (strpos($_SERVER['HTTP_HOST'], 'herokuapp') !== false) {
     //    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
@@ -21,7 +26,6 @@ function getDatabaseConnection(){
     
     //display errors when accessing tables
     $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     return $dbConn;
     
 }
