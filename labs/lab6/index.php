@@ -1,15 +1,11 @@
 <?php
-/*
-Rubric
-8) There is a confirmation to delete a user (10 points)
-9) It uses Bootstrap (10 points)
-*/
 
 
 ?>
 <!DOCTYPE html>
 <html>
     <head>
+         <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
         <meta charset="utf-8"/>
         <title> Lab 6: Admin Login Page</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" /> 

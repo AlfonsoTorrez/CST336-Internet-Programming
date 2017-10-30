@@ -28,9 +28,9 @@ function displayUsers() {
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="path/to/jquery.js"></script>
-        <script src="path/to/bootstrap.js"></script>
-        <script src="path/to/bootstrap-confirmation.js"></script>
+        
+        <link data-require="bootstrap-css@3.1.1" data-semver="3.1.1" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
         <title>Admin Page</title>
     </head>
     <body>
@@ -77,5 +77,7 @@ function displayUsers() {
                     }
 
         ?>
+        
+        
     </body>
 </html>
