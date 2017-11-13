@@ -43,7 +43,7 @@ function updateBoard() {
     }
     
     $("#word").append("<br />");
-    $("#word").append("<span class='hint'>Hint: " + selectedHint + "</span>")
+    $("#word").append("<button class ='hint'>Hint</button>")
 }
 
 function initBoard() {
@@ -150,4 +150,10 @@ $(".letter").click(function(){
 $(".replayBtn").on("click",function() {
     location.reload(); 
 });
+
+$(".hint").on("click",function() {
+    $("#word").append("<span class='hint'>" + selectedHint + "</span>");
+});
+
+
 
