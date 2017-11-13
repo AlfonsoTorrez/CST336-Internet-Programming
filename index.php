@@ -31,6 +31,8 @@
             <br>
             <a href="http://alftorres-cst336.herokuapp.com/labs/lab6/index.php" >Lab 6</a>
             <br>
+            <a href="http://alftorres-cst336.herokuapp.com/labs/lab7/index.html" >Lab 7</a>
+            <br>
             <a href="http://alftorres-cst336.herokuapp.com/CST336_GroupProject_OnlineCatalog/index.php" >Group Project 2</a>
             <br>
         </nav>
