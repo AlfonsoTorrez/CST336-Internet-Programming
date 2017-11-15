@@ -27,6 +27,8 @@ function randomFact(){
 
 //Print Slothes
 function printSloths(num){
+    $('#pictureContainer').show(); 
+    $('#slothContent').hide(); 
     for(i=1;i<=10;i++){
         if(i<=num){
             $('#sloth'+i+'').html("<img src='"+slothPicture[i]+"' alt='Sloth Picture'>").show();
@@ -41,11 +43,13 @@ function printSloths(num){
 $('#slothPicture').on('click',function(){
     $('#pictureContainer').hide(); 
     $('#slothContent').html("<img src='"+randomPicture()+"' alt='Sloth Picture'>"); 
+    $('#slothContent').show(); 
 });
 
 $('#slothFact').on('click',function(){
     $('#pictureContainer').hide(); 
     $('#slothContent').html("<img src='"+randomFact()+"' alt='Sloth Fact'>"); 
+    $('#slothContent').show(); 
 });
 
 $('#enter').on('click',function(){
