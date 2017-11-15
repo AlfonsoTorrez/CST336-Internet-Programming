@@ -1,0 +1,71 @@
+<!--
+Rubric:
+
+Program uses some of the elements used in Assignments 2 or 3 (conditions, loops, arrays, form elements) (40 pts)
+Program processes data and not just displays again the values entered (20 pts)
+Program uses both JavaScript and jQuery (15 pts)
+Program uses Bootstrap (or has a nice look and feel) (15 pts)
+You post a clickable link to the assignment (10 pts)
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Random Sloths</title>
+         <link  href="css/styles.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <h1>Random Sloths and Facts</h1>
+        <hr>
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Sloths</a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="randomAnimals.html">Home</a></li>
+            </ul>
+            <button id="slothPicture" class="btn btn-primary navbar-btn">Sloth Picture</button>
+            <button id="slothFact" class="btn btn-primary navbar-btn">Sloth Fact</button>
+             <button id="enter" type="submit" class="btn btn-default navbar-btn navbar-right">Enter</button>
+          <form class="navbar-form navbar-right">
+              <div class="form-group">
+                <input id="number" type="text" class="form-control">
+              </div>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+              <li><a>Enter a number between 1-10 to produce that amount of sloths -></a></li>
+          </ul>
+          
+          </div>
+        </nav> 
+        <div id="alert"></div>
+        <div id="slothContent"></div>
+        <div id="pictureContainer">
+            <div id="sloth1"></div>
+            <div id="sloth2"></div>
+            <div id="sloth3"></div>
+            <div id="sloth4"></div>
+            <div id="sloth5"></div>
+            <div id="sloth6"></div>
+            <div id="sloth7"></div>
+            <div id="sloth8"></div>
+            <div id="sloth9"></div>
+            <div id="sloth10"></div>
+            <div id="sloth11"></div>
+        </div>
+     
+        <script src="js/sloth.js"></script>
+        <footer> 
+            <hr>
+            CST 336, 2017 &copy; Torres <br /> 
+            <strong>Disclaimer:</strong> The information on this webpage is fictitous.<br /> 
+            Its is used for academic purpose.<br />
+            <img src="img/CSUMBLogo.png" alt="CSUMB Logo">
+        </footer>
+    </body>
+</html>

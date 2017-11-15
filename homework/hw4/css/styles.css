@@ -1,0 +1,24 @@
+
+body{
+    background-image:url("http://alftorres-cst336.herokuapp.com/homework/hw2/img/jungle.png");
+}
+
+h1{
+    text-align: center; 
+}
+
+#pictureContainer, #slothContent{
+    text-align: center; 
+}
+
+img {
+    border: 10px solid black; 
+    border-radius: 20px; 
+}
+
+
+
+footer{
+    text-align: center;
+    color:white;
+}
