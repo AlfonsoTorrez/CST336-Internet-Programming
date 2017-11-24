@@ -1,0 +1,116 @@
+<!--
+Rubric
+
+1) City, longitude and latitude are updated when entering a zip code (15 pts)
+2) A "Zip code not found" message is displayed next to its text box, if that's the case (15 pts)
+2) The list of counties is updated properly when selecting a State (15 pts)
+3) A color-coded message indicates whether the username is available or not (20 pts)
+4) There is validation for Password matching "Retype Password". 
+    The validation should take place when submitting the form.  (15 pts)
+     You don't need to add a new record to the database.
+5) Page has a nice look and feel (uses Bootstrap or includes 20 CSS rules) (10 pts)
+6) You submit a clickable link to the lab in Heroku (10 pts)
+
+
+-->
+<!DOCTYPE html>
+<!-- saved from url=(0080)https://ilearn.csumb.edu/pluginfile.php/721164/mod_resource/content/0/index.html -->
+<html>
+    <head>
+        <title>AJAX: Sign Up Page</title>
+        <style type="text/css" id="diigolet-chrome-css"></style>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script>
+            function getCity() {
+                //alert("hi"); 
+                //alert($("#zip").val());
+                $.ajax({
+                    type: "GET",
+                    url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                    dataType: "json", //Need to specify the format
+                    data: { "zip": $("#zip").val()},
+                    success: function(data,status) {
+                        alert(data.city);
+                        $("#city").html(data.city);
+                        $("#latitude").html(data.latitude);
+                        $("#longitude").html(data.longitude);
+                    },
+                    complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                    }
+                    
+                    });//ajax
+             }//Function
+             
+             function getCounties(){
+                //alert("You've selected state: "+$("#stateId").val()); 
+                $.ajax({
+                        
+                        type: "GET",
+                        url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
+                        dataType: "json",
+                        data: { "state": $("#stateId").val()},
+                        success: function(data,status) {
+                        //alert(data[0].county);
+                        for(var i=0; i<data.length; i++){
+                            $("#countyId").append("<option>"+data[i].county+ "</option>");
+                            }
+                        },
+                        complete: function(data,status) { //optional, used for debugging purposes
+                        //alert(status);
+                        }
+                        
+                        });//ajax
+                }
+             
+             //Event Handlers
+             $(document).ready(function(){
+                 $("#zip").change(function(){ getCity();}); 
+                 $("#stateId").change(function(){getCounties(); });
+             });//documentReady
+        </script>
+    </head>
+
+<body id="dummybodyid">
+
+   <h1> Sign Up Form </h1>
+
+    <form onsubmit="return false">
+        <fieldset>
+           <legend>Sign Up</legend>
+            First Name:  <input type="text"><br> 
+            Last Name:   <input type="text"><br> 
+            Email:       <input type="text"><br> 
+            Phone Number:<input type="text"><br><br>
+            <!--When ever you change the zipcode it will call out the function -->
+            Zip Code:    <input type="text" id="zip" onchange="getCity()"><br>
+            City: <span id="city"></span>
+            <br>
+            Latitude: <span id="latitude"></span>
+            <br>
+            Longitude:<span id="longitude"></span>
+            <br><br>
+            State: <select id="stateId" name="state">
+                      <option value="">Select One</option>
+                      <option value="al">Alabama</option>
+                      <option value="ak">Alaska</option>
+                      <option value="az">Arizona</option>
+                      <option value="ar">Arkansas</option>
+                      <option value="ca">California</option>
+                  </select>
+            <br>
+            Select a County: <select id="countyId"></select>
+            <br>
+            
+            Desired Username: <input type="text"><br>
+            Password: <input type="password"><br>
+            Type Password Again: <input type="password"><br>
+            <input value="Sign up!" type="submit">
+        </fieldset>
+    </form>
+
+
+
+    </body>
+</html>
