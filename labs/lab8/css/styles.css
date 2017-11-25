@@ -1,3 +1,12 @@
+h1{
+    text-align: center; 
+}
+body{
+    background-color: lightblue; 
+}
+fieldset{
+    font-family: sans-serif;
+}
 #zipAlert{
     color: red; 
 }
@@ -20,6 +29,15 @@
     color: red; 
 }
 #secondPassAlert{
+    color: red; 
+}
+#stateAlert{
+    color: red; 
+}
+#countyAlert{
+    color: red; 
+}
+#usernameAlert{
     color: red; 
 }
 #userGood{

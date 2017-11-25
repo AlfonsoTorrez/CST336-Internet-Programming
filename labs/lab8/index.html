@@ -27,29 +27,51 @@ Rubric
         var username = [""]; 
         function submitInfo(){
             if(document.getElementById("fname").value!==""){
-                    if(document.getElementById("lname").value!==""){
-                        if(document.getElementById("email").value!==""){
-                            if(document.getElementById("number").value!==""){
+                if(document.getElementById("lname").value!==""){
+                    if(document.getElementById("email").value!==""){
+                        if(document.getElementById("number").value!==""){
                                 if(document.getElementById("stateId").value!==""){
                                     if(document.getElementById("countyId").value!==""){
-                                        if(document.getElementById("pass1").value!==""){
-                                            if(document.getElementById("pass2").value!==""){
-                                                if(document.getElementById("pass1").value===document.getElementById("secondPassAlert").value){
-                                                    $("#city").html("");
-                                                    $("#latitude").html("");
-                                                    $("#longitude").html("");
-                                                    $("#secondPassAlert").html(""); 
-                                                    $("#passAlert").html("");  
-                                                    $("#countyAlert").html("");  
-                                                    $("#countyAlert").html("");  
-                                                    $("#stateAlert").html("");
-                                                    $("#numberAlert").html(""); 
-                                                    $("#emailAlert").html(""); 
-                                                    $("#lnameAlert").html(""); 
-                                                    $("#fnameAlert").html(""); 
-                                                    alert("Info Has been saved!");
+                                        if(document.getElementById("username").value!==""){
+                                            if(document.getElementById("pass1").value!==""){
+                                                if(document.getElementById("pass2").value!==""){
+                                                    if(document.getElementById("pass1").value===document.getElementById("pass2").value){
+                                                        $("#city").html("");
+                                                        $("#latitude").html("");
+                                                        $("#longitude").html("");
+                                                        $("#userBad").html(""); 
+                                                        $("#userGood").html(""); 
+                                                        $("#pass1").html(""); 
+                                                        $("#pass2").html("");  
+                                                        $("#county").html("");  
+                                                        $("#state").html("");
+                                                        $("#number").html(""); 
+                                                        $("#email").html(""); 
+                                                        $("#lname").html(""); 
+                                                        $("#fname").html(""); 
+                                                        $("#secondPassAlert").html(""); 
+                                                        $("#passAlert").html("");  
+                                                        $("#countyAlert").html("");  
+                                                        $("#stateAlert").html("");
+                                                        $("#numberAlert").html(""); 
+                                                        $("#emailAlert").html(""); 
+                                                        $("#lnameAlert").html(""); 
+                                                        $("#fnameAlert").html(""); 
+                                                        username.push(document.getElementById("username").value)
+                                                        alert("Info Has been saved!");
+                                                    }else{
+                                                        $("#secondPassAlert").html("Retype password does not match current password"); 
+                                                        $("#passAlert").html("");  
+                                                        $("#countyAlert").html("");  
+                                                        $("#countyAlert").html("");  
+                                                        $("#stateAlert").html("");
+                                                        $("#numberAlert").html(""); 
+                                                        $("#emailAlert").html(""); 
+                                                        $("#lnameAlert").html(""); 
+                                                        $("#fnameAlert").html("");  
+                                                    }
                                                 }else{
-                                                    $("#secondPassAlert").html("Retype password does not match current password"); 
+                                                    $("#secondPassAlert").html("Missing Password Retype"); 
                                                     $("#passAlert").html("");  
                                                     $("#countyAlert").html("");  
                                                     $("#countyAlert").html("");  
@@ -60,8 +82,7 @@ Rubric
                                                     $("#fnameAlert").html("");  
                                                 }
                                             }else{
-                                                $("#secondPassAlert").html("Missing Password Retype"); 
-                                                $("#passAlert").html("");  
+                                                $("#passAlert").html("Missing Password");  
                                                 $("#countyAlert").html("");  
                                                 $("#countyAlert").html("");  
                                                 $("#stateAlert").html("");
@@ -71,15 +92,14 @@ Rubric
                                                 $("#fnameAlert").html("");  
                                             }
                                         }else{
-                                            $("#passAlert").html("Missing Password");  
-                                            $("#countyAlert").html("");  
+                                            $("#usernameAlert").html("Missing Username");  
                                             $("#countyAlert").html("");  
                                             $("#stateAlert").html("");
                                             $("#numberAlert").html(""); 
                                             $("#emailAlert").html(""); 
                                             $("#lnameAlert").html(""); 
                                             $("#fnameAlert").html("");  
-                                        }
+                                    }
                                     }else{
                                         $("#countyAlert").html("Missing County");  
                                         $("#stateAlert").html("");
@@ -94,8 +114,8 @@ Rubric
                                     $("#emailAlert").html(""); 
                                     $("#lnameAlert").html(""); 
                                     $("#fnameAlert").html("");  
-                            }
                                 }
+                        
                             }else{
                                 $("#numberAlert").html("Missing number"); 
                                 $("#emailAlert").html(""); 
@@ -111,8 +131,7 @@ Rubric
                     $("#lnameAlert").html("Missing last name"); 
                     $("#fnameAlert").html("");  
                 }
-            }
-            else{
+            }else{
                 $("#fnameAlert").html("Missing first name");  
             }
         }
@@ -195,14 +214,14 @@ Rubric
         </script>
     </head>
 
-<body id="dummybodyid">
+<body>
 
    <h1> Sign Up Form </h1>
 
-    <form onsubmit="return false">
+    <form>
         <fieldset>
            <legend>Sign Up</legend>
-            First Name:  <input type="text" id="fname" value=""><text id="fnameAlert"></text>
+            First Name:  <input class="form-control" type="text" id="fname" value=""><text id="fnameAlert"></text>
             <br> 
             Last Name:   <input type="text" id="lname" value=""><text id="lnameAlert"></text>
             <br> 
@@ -233,17 +252,16 @@ Rubric
                             </select><text id="countyAlert"></text>
             <br>
             <text></text>
-            Desired Username: <input id=username type="text" onchange="checkUsername()"><text id="userBad"></text>
-            <text id="userGood"></text>
+            Desired Username: <input id="username" type="text" onchange="checkUsername()"><text id="userBad"></text>
+            <text id="userGood"></text><text id="usernameAlert"></text>
             <br>
             Password: <input type="password" id="pass1" value=""><text id="passAlert"></text>
             <br>
             Type Password Again: <input type="password" id="pass2" value=""><text id="secondPassAlert"></text>
             <br>
-            <button id="signUp" onclick="submitInfo()">Sign Up!</button>
+            <button id="signUp" type="button" class="btn btn-primary" onclick="submitInfo()">Sign Up!</button>
         </fieldset>
     </form>
-
 
 
     </body>
