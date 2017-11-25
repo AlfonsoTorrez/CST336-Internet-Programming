@@ -1,0 +1,28 @@
+#zipAlert{
+    color: red; 
+}
+#userBad{
+    color: red; 
+}
+#fnameAlert{
+    color: red; 
+}
+#lnameAlert{
+    color: red; 
+}
+#emailAlert{
+    color: red; 
+}
+#numberAlert{
+    color: red; 
+}
+#passAlert{
+    color: red; 
+}
+#secondPassAlert{
+    color: red; 
+}
+#userGood{
+    color: green; 
+}
+
