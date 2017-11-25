@@ -1,15 +1,15 @@
 <!--
 Rubric
 
-1) City, longitude and latitude are updated when entering a zip code (15 pts)
-2) A "Zip code not found" message is displayed next to its text box, if that's the case (15 pts)
-2) The list of counties is updated properly when selecting a State (15 pts)
-3) A color-coded message indicates whether the username is available or not (20 pts)
+1)*****City, longitude and latitude are updated when entering a zip code (15 pts)*****
+2)*****A "Zip code not found" message is displayed next to its text box, if that's the case (15 pts)*****
+2)*****The list of counties is updated properly when selecting a State (15 pts)*****
+3)*****A color-coded message indicates whether the username is available or not (20 pts)*****
 4) There is validation for Password matching "Retype Password". 
     The validation should take place when submitting the form.  (15 pts)
      You don't need to add a new record to the database.
 5) Page has a nice look and feel (uses Bootstrap or includes 20 CSS rules) (10 pts)
-6) You submit a clickable link to the lab in Heroku (10 pts)
+6)******You submit a clickable link to the lab in Heroku (10 pts)******
 
 
 -->
@@ -18,57 +18,180 @@ Rubric
 <html>
     <head>
         <title>AJAX: Sign Up Page</title>
-        <style type="text/css" id="diigolet-chrome-css"></style>
+        
+        <style type="text/css" id="diigolet-chrome-css">@import url("css/styles.css");</style>
+        <style type="text/css" url="css/styles.css"></style>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
         <script>
-            function getCity() {
-                //alert("hi"); 
-                //alert($("#zip").val());
-                $.ajax({
+        var username = [""]; 
+        function submitInfo(){
+            if(document.getElementById("fname").value!==""){
+                    if(document.getElementById("lname").value!==""){
+                        if(document.getElementById("email").value!==""){
+                            if(document.getElementById("number").value!==""){
+                                if(document.getElementById("stateId").value!==""){
+                                    if(document.getElementById("countyId").value!==""){
+                                        if(document.getElementById("pass1").value!==""){
+                                            if(document.getElementById("pass2").value!==""){
+                                                if(document.getElementById("pass1").value===document.getElementById("secondPassAlert").value){
+                                                    $("#city").html("");
+                                                    $("#latitude").html("");
+                                                    $("#longitude").html("");
+                                                    $("#secondPassAlert").html(""); 
+                                                    $("#passAlert").html("");  
+                                                    $("#countyAlert").html("");  
+                                                    $("#countyAlert").html("");  
+                                                    $("#stateAlert").html("");
+                                                    $("#numberAlert").html(""); 
+                                                    $("#emailAlert").html(""); 
+                                                    $("#lnameAlert").html(""); 
+                                                    $("#fnameAlert").html(""); 
+                                                    alert("Info Has been saved!");
+                                                }else{
+                                                    $("#secondPassAlert").html("Retype password does not match current password"); 
+                                                    $("#passAlert").html("");  
+                                                    $("#countyAlert").html("");  
+                                                    $("#countyAlert").html("");  
+                                                    $("#stateAlert").html("");
+                                                    $("#numberAlert").html(""); 
+                                                    $("#emailAlert").html(""); 
+                                                    $("#lnameAlert").html(""); 
+                                                    $("#fnameAlert").html("");  
+                                                }
+                                            }else{
+                                                $("#secondPassAlert").html("Missing Password Retype"); 
+                                                $("#passAlert").html("");  
+                                                $("#countyAlert").html("");  
+                                                $("#countyAlert").html("");  
+                                                $("#stateAlert").html("");
+                                                $("#numberAlert").html(""); 
+                                                $("#emailAlert").html(""); 
+                                                $("#lnameAlert").html(""); 
+                                                $("#fnameAlert").html("");  
+                                            }
+                                        }else{
+                                            $("#passAlert").html("Missing Password");  
+                                            $("#countyAlert").html("");  
+                                            $("#countyAlert").html("");  
+                                            $("#stateAlert").html("");
+                                            $("#numberAlert").html(""); 
+                                            $("#emailAlert").html(""); 
+                                            $("#lnameAlert").html(""); 
+                                            $("#fnameAlert").html("");  
+                                        }
+                                    }else{
+                                        $("#countyAlert").html("Missing County");  
+                                        $("#stateAlert").html("");
+                                        $("#numberAlert").html(""); 
+                                        $("#emailAlert").html(""); 
+                                        $("#lnameAlert").html(""); 
+                                        $("#fnameAlert").html("");  
+                                    }
+                                }else{
+                                    $("#stateAlert").html("Missing State");
+                                    $("#numberAlert").html(""); 
+                                    $("#emailAlert").html(""); 
+                                    $("#lnameAlert").html(""); 
+                                    $("#fnameAlert").html("");  
+                            }
+                                }
+                            }else{
+                                $("#numberAlert").html("Missing number"); 
+                                $("#emailAlert").html(""); 
+                                $("#lnameAlert").html(""); 
+                                $("#fnameAlert").html("");  
+                            }
+                    }else{
+                        $("#emailAlert").html("Missing email"); 
+                        $("#lnameAlert").html(""); 
+                        $("#fnameAlert").html("");  
+                    }
+                }else{
+                    $("#lnameAlert").html("Missing last name"); 
+                    $("#fnameAlert").html("");  
+                }
+            }
+            else{
+                $("#fnameAlert").html("Missing first name");  
+            }
+        }
+        function checkUsername(){
+            var user = false; 
+            for(var i=0;i<username.length;i++){
+                if(username[i]==document.getElementById("username").value){
+                    user=true; 
+                }else{
+                    
+                }
+            }
+            if(user){
+                $("#userBad").html("Username already taken");  
+                $("#userGood").html("");  
+            }
+            else{
+                $("#userGood").html("Username Approved");  
+                $("#userBad").html("");  
+            }
+
+        }
+        function getCity() {
+            //alert("hi"); 
+            //alert($("#zip").val());
+            $.ajax({
+                type: "GET",
+                url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                dataType: "json", //Need to specify the format
+                data: { "zip": $("#zip").val()},
+                success: function(data,status) {
+                    //alert(data.city);
+                    $("#city").html(data.city);
+                    $("#latitude").html(data.latitude);
+                    $("#longitude").html(data.longitude);
+                    if(data.city==undefined){
+                        $("#zipAlert").html("Zip code not found");
+                        $("#city").html("");
+                        $("#latitude").html("");
+                        $("#longitude").html("");
+                    }
+                    else {
+                        $("#zipAlert").html("");
+                    }
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                //alert(status);
+                }
+                
+                });//ajax
+                
+         }//Function
+         
+         function getCounties(){
+            //alert("You've selected state: "+$("#stateId").val()); 
+            $.ajax({
+                    
                     type: "GET",
-                    url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
-                    dataType: "json", //Need to specify the format
-                    data: { "zip": $("#zip").val()},
+                    url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
+                    dataType: "json",
+                    data: { "state": $("#stateId").val()},
                     success: function(data,status) {
-                        alert(data.city);
-                        $("#city").html(data.city);
-                        $("#latitude").html(data.latitude);
-                        $("#longitude").html(data.longitude);
+                    //alert(data[0].county);
+                    for(var i=0; i<data.length; i++){
+                        $("#countyId").append("<option>"+data[i].county+ "</option>");
+                        }
                     },
                     complete: function(data,status) { //optional, used for debugging purposes
                     //alert(status);
                     }
                     
                     });//ajax
-             }//Function
-             
-             function getCounties(){
-                //alert("You've selected state: "+$("#stateId").val()); 
-                $.ajax({
-                        
-                        type: "GET",
-                        url: "http://itcdland.csumb.edu/~milara/ajax/countyList.php",
-                        dataType: "json",
-                        data: { "state": $("#stateId").val()},
-                        success: function(data,status) {
-                        //alert(data[0].county);
-                        for(var i=0; i<data.length; i++){
-                            $("#countyId").append("<option>"+data[i].county+ "</option>");
-                            }
-                        },
-                        complete: function(data,status) { //optional, used for debugging purposes
-                        //alert(status);
-                        }
-                        
-                        });//ajax
-                }
-             
-             //Event Handlers
-             $(document).ready(function(){
-                 $("#zip").change(function(){ getCity();}); 
-                 $("#stateId").change(function(){getCounties(); });
-             });//documentReady
+            }
+         
+         //Event Handlers
+         $(document).ready(function(){
+             $("#zip").change(function(){ getCity();}); 
+             $("#stateId").change(function(){getCounties(); });
+         });//documentReady
         </script>
     </head>
 
@@ -79,12 +202,17 @@ Rubric
     <form onsubmit="return false">
         <fieldset>
            <legend>Sign Up</legend>
-            First Name:  <input type="text"><br> 
-            Last Name:   <input type="text"><br> 
-            Email:       <input type="text"><br> 
-            Phone Number:<input type="text"><br><br>
+            First Name:  <input type="text" id="fname" value=""><text id="fnameAlert"></text>
+            <br> 
+            Last Name:   <input type="text" id="lname" value=""><text id="lnameAlert"></text>
+            <br> 
+            Email:       <input type="text" id="email" value=""><text id="emailAlert"></text>
+            <br> 
+            Phone Number:<input type="text" id="number" value=""><text id="numberAlert"></text>
+            <br><br>
             <!--When ever you change the zipcode it will call out the function -->
-            Zip Code:    <input type="text" id="zip" onchange="getCity()"><br>
+            Zip Code:    <input type="text" id="zip" onchange="getCity()"><text id="zipAlert"></text>
+            <br>
             City: <span id="city"></span>
             <br>
             Latitude: <span id="latitude"></span>
@@ -98,15 +226,21 @@ Rubric
                       <option value="az">Arizona</option>
                       <option value="ar">Arkansas</option>
                       <option value="ca">California</option>
-                  </select>
+                  </select><text id="stateAlert"></text>
             <br>
-            Select a County: <select id="countyId"></select>
+            Select a County:<select id="countyId">
+                                <option value="">Select One</option>
+                            </select><text id="countyAlert"></text>
             <br>
-            
-            Desired Username: <input type="text"><br>
-            Password: <input type="password"><br>
-            Type Password Again: <input type="password"><br>
-            <input value="Sign up!" type="submit">
+            <text></text>
+            Desired Username: <input id=username type="text" onchange="checkUsername()"><text id="userBad"></text>
+            <text id="userGood"></text>
+            <br>
+            Password: <input type="password" id="pass1" value=""><text id="passAlert"></text>
+            <br>
+            Type Password Again: <input type="password" id="pass2" value=""><text id="secondPassAlert"></text>
+            <br>
+            <button id="signUp" onclick="submitInfo()">Sign Up!</button>
         </fieldset>
     </form>
 
