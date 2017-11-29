@@ -35,8 +35,18 @@ Nov 20, 2017  11:13am
 In other words, you'll need to insert the value into a database table and then retrieve and display the number of times it's being used and the time stamps when the values where added to the database.
 -->
 <?php
-    include 'dbConnection.php';
+    /*Use this later to see how many times I searched a certain zipcode
+    SELECT COUNT(zipCode) FROM `db_zipcode` WHERE zipCode = 95206 */
+    include '../../dbConnection.php';
     $conn = getDatabaseConnection();
+    $sql = "SELECT zipCode FROM `db_zipcode`";
+
+    $zips = array();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute($zips);
+    $record = $stmt->fetch(PDO::FETCH_ASSOC);//expecting only one record
+    
+    print_r($zips)
 ?>
 <!DOCTYPE html>
 <html>
