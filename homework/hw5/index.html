@@ -7,16 +7,16 @@ Optionally, you can create your own API.
 
 Rubric:
 
-1. Web page includes an HTML form with at least two form elements  (10 points)
-2. Web page uses an API and sends at least one value typed by the user  (10 points)
-3. Web page displays at least three values returned by the API, below the HTML form   (15 points)
+1.*****Web page includes an HTML form with at least two form elements  (10 points)*****
+2.*****Web page uses an API and sends at least one value typed by the user  (10 points)*****
+3.*****Web page displays at least three values returned by the API, below the HTML form(15 points)
 4. At least one value typed by the user is stored in a database using AJAX (15 points)
 5. The value typed by the user and the number of times the same value has been typed are displayed right below the HTML form (15 points)
 6. The history of the value typed by the user is displayed below the form too. 
     The history includes the date and time the value was typed. Hint:  Use a "timestamp" field type in the database table. 
     Its value is automatically updated when a record is inserted. (15 points)
 7. Web page has a nice design (uses Bootstrap or at least 20 CSS rules) (10 points)
-8. There is a clickable link to the assignment in Heroku (10 points)
+8.*****There is a clickable link to the assignment in Heroku (10 points)*****
 
 Example: if using the Walmart API and searching for "wii"  for the first time on Nov 18, upon clicking on a "Search" button, an AJAX call should return something like:
 
@@ -34,6 +34,10 @@ Nov 20, 2017  11:13am
 
 In other words, you'll need to insert the value into a database table and then retrieve and display the number of times it's being used and the time stamps when the values where added to the database.
 -->
+<?php
+    include 'dbConnection.php';
+    $conn = getDatabaseConnection();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,15 +46,53 @@ In other words, you'll need to insert the value into a database table and then r
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <title>Homework 5</title>
+        <script>
+            function getCity() {
+                //alert($("#textbox").val());
+            $.ajax({
+                type: "GET",
+                url: "http://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
+                dataType: "json", //Need to specify the format
+                data: { "zip": $("#textbox").val()},
+                success: function(data,status) {
+                    //alert(data.city);
+                    $("#state").html(data.state);
+                    $("#city").html(data.city);
+                    $("#county").html(data.county);
+                    if(data.city==undefined){
+                        $("#zipAlert").html("Zip code not found");
+                        $("#city").html("");
+                        $("#state").html("");
+                        $("#county").html("");
+                    }
+                    else {
+                        $("#zipAlert").html("");
+                    }
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                //alert(status);
+                }
+                
+                });//ajax
+                
+         }//Function
+        </script>
     </head>
-    <body>
-        <h1 id="title">Movie Search</h1>
+    <body id="main">
+        <h1 id="title"> Searching my Zip Code</h1>
         <form>
-            <label id="enter">Enter your favorite movie here below:</label>
+            <label id="enter">Enter your favorite zip code below:</label>
             <br>
-            <input id ="textbox" type="text">
+            <input id ="textbox" type="text"><text id="zipAlert"></text>
             <br><br>
-            <button type="submit" class="btn btn-primary"> Enter </button>
         </form> 
+        <button class="btn btn-primary" onclick="getCity()"> Enter </button>
+        <div id = "info">
+            <b><u>State</u>:</b> <span id="state"></span>
+            <br>
+            <b><u>City</u>:</b> <span id="city"></span>
+            <br>
+            <b><u>County</u>:</b> <span id="county"></span>
+        </div>
     </body>
 </html>
