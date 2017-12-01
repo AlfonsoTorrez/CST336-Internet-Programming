@@ -9,8 +9,8 @@ Rubric:
 
 1.*****Web page includes an HTML form with at least two form elements  (10 points)*****
 2.*****Web page uses an API and sends at least one value typed by the user  (10 points)*****
-3.*****Web page displays at least three values returned by the API, below the HTML form(15 points)
-4. At least one value typed by the user is stored in a database using AJAX (15 points)
+3.*****Web page displays at least three values returned by the API, below the HTML form(15 point
+4.*****At least one value typed by the user is stored in a database using AJAX (15 points)*****
 5. The value typed by the user and the number of times the same value has been typed are displayed right below the HTML form (15 points)
 6. The history of the value typed by the user is displayed below the form too. 
     The history includes the date and time the value was typed. Hint:  Use a "timestamp" field type in the database table. 
@@ -34,20 +34,6 @@ Nov 20, 2017  11:13am
 
 In other words, you'll need to insert the value into a database table and then retrieve and display the number of times it's being used and the time stamps when the values where added to the database.
 -->
-<?php
-    /*Use this later to see how many times I searched a certain zipcode
-    SELECT COUNT(zipCode) FROM `db_zipcode` WHERE zipCode = 95206 */
-    include '../../dbConnection.php';
-    $conn = getDatabaseConnection();
-    $sql = "SELECT zipCode FROM `db_zipcode`";
-
-    $zips = array();
-    $stmt = $conn->prepare($sql);
-    $stmt->execute($zips);
-    $record = $stmt->fetch(PDO::FETCH_ASSOC);//expecting only one record
-    
-    print_r($zips)
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -85,6 +71,30 @@ In other words, you'll need to insert the value into a database table and then r
                 
                 });//ajax
                 
+            $("#history2").html("");
+            $.ajax({
+                type: "GET",
+                url: "zipAPI.php",
+                dataType: "json", //Need to specify the format
+                data: {"zip": $("#textbox").val()},
+                success: function(data,status) {
+                    var count = 0; 
+                    //alert(data.length);
+                    for(var i=0;i<data.length;i++){
+                        $("#history2").append('<span>'+"Zip Code ->"+data[i].zipCode+" "+"Timestamp ->"+data[i].timestamp+'</span><br>');
+                        if($("#textbox").val()==data[i].zipCode){
+                            count = count + 1; 
+                        }
+                    }
+                    $("#zipcode").html($("#textbox").val());
+                    $("#count").html(count);
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                //alert(status);
+                }
+                
+                });//ajax
+                
          }//Function
         </script>
     </head>
@@ -103,6 +113,18 @@ In other words, you'll need to insert the value into a database table and then r
             <b><u>City</u>:</b> <span id="city"></span>
             <br>
             <b><u>County</u>:</b> <span id="county"></span>
+            <br></br>
+        </div>
+        <div id = "history1">
+            <b><u>Zip Code Entered</u>:</b> <span id="zipcode"></span>
+            <br>
+            <b><u>Times The Zipcode Was Used</u>:</b> 
+            <span id="count"></span>
+            <br></br>
+        </div>
+        <b><u>History</u>:</b>
+        <div id = "history2">
+            
         </div>
     </body>
 </html>
