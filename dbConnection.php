@@ -1,6 +1,6 @@
 <?php
 
-function getDatabaseConnection(){
+function getDatabaseConnection($dbname = 'tcp'){
     /*
     $host = 'us-cdbr-iron-east-05.cleardb.net';//cloud 9
     $dbname = 'heroku_5cc899d91ebdb63';
@@ -8,7 +8,6 @@ function getDatabaseConnection(){
     $password = '06d1624f';
     */
     $host = 'localhost';//cloud 9
-    $dbname = 'tcp';
     $username = 'root';
     $password = '';
     
