@@ -34,6 +34,25 @@
                 $('#loginInfoModal').modal('show');
             }
             
+            function search(name){
+
+                $.ajax({
+                type: "GET",
+                url: "api/search.php",//USE CSUMBLibrary 
+                dataType: "json", //Need to specify the format
+                data: {"name":name},
+                success: function(data,status) {
+                    //alert("BRU")
+                    $("tbody").html("");
+                    $("tbody").append("<tr><th scope='row'>"+data[0].bookId+"</th><td>"+data[0].bName+"</td><td>"+data[0].bGenre+"</td><td>"+data[0].bAuthor+"</td><td><button id='add' type='button' class='btn btn-primary btn-xs' onclick='addBook("+data[0].bookId+","+data[0].bookId+")'>Add To Library</button></td><td><button id='edit' type='button' class='btn btn-danger btn-xs' onclick='editBook("+data[0].bookId+")' >Edit</button></td><td><button id='delete' type='button' class='btn btn-danger btn-xs' onclick='removeCSUMBBook("+data[0].bookId+")'>Delete</button></td></tr>");
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                }
+                
+                });//ajax
+            }
+            
             function zaOrder(){
                 //alert("bruh");
                 $.ajax({
@@ -245,9 +264,9 @@
                     </div>
                   </li>
               </ul>
-                <form class="form-inline my-2 my-lg-0" id="search">
-                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <form class="form-inline">
+                  <input id="search1" class="form-control mr-sm-2" placeholder="Search">
+                  <button type="button" class="btn btn-outline-success my-2 my-sm-0" onclick="search(document.getElementById('search1').value)">Enter</button>
                 </form>
             </div>
           </div>
