@@ -1,7 +1,18 @@
-<?php 
+<?php
     include 'inc/header.php';
 ?>
+<style>
+    #add{
+      display: none;
+    }
+    #delete{
+        display: inline;
+    }
+    #addButton{
+        display: inline;
+    }
 
+</style>
 <script>
     csumbLibrary(); 
 </script>

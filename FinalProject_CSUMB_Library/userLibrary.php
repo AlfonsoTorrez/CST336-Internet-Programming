@@ -4,7 +4,12 @@
      <script>
     //     userLibrary(); 
      </script>
- <div class="modal fade" id="loginInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <style>
+    #admin{
+      display: none; 
+    }
+  </style>
+      <div class="modal fade" id="loginInfoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <form method="post">
@@ -32,7 +37,7 @@
               </form>
             </div>
           </div>
-</div> 
+</div>
 <h1><u>Welcome To Your Library</u></h1>
 <table class="table table-striped table-dark">
   <thead>

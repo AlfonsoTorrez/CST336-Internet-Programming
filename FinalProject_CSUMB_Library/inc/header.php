@@ -17,7 +17,10 @@
             h3{
                 text-align: center;
             }
-            #delete{
+            #delete,#edit,#editForm{
+                display: none; 
+            }
+            #addButton{
                 display: none; 
             }
 
@@ -26,6 +29,72 @@
             $(window).on('load',function(){
                 $('#loginInfoModal').modal('show');
             });
+            
+            function adminSignin(){
+                $('#loginInfoModal').modal('show');
+            }
+            
+            function zaOrder(){
+                //alert("bruh");
+                $.ajax({
+                type: "GET",
+                url: "api/zaOrder.php",//USE CSUMBLibrary 
+                dataType: "json", //Need to specify the format
+                data: {},
+                success: function(data,status) {
+                    $("tbody").html("");
+                    for(var i=0; i<data.length; i=i+1){
+                        $("tbody").append("<tr><th scope='row'>"+data[i].bookId+"</th><td>"+data[i].bName+"</td><td>"+data[i].bGenre+"</td><td>"+data[i].bAuthor+"</td><td><button id='add' type='button' class='btn btn-primary btn-xs' onclick='addBook("+data[i].bookId+","+data[i].bookId+")'>Add To Library</button></td><td><button id='edit' type='button' class='btn btn-danger btn-xs' onclick='editBook("+data[i].bookId+")' >Edit</button></td><td><button id='delete' type='button' class='btn btn-danger btn-xs' onclick='removeCSUMBBook("+data[i].bookId+")'>Delete</button></td></tr>");
+                    }
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                }
+                
+                });//ajax
+            }
+            
+            function azOrder(){
+                //alert("bruh");
+                $.ajax({
+                type: "GET",
+                url: "api/azOrder.php",//USE CSUMBLibrary 
+                dataType: "json", //Need to specify the format
+                data: {},
+                success: function(data,status) {
+                    $("tbody").html("");
+                    for(var i=0; i<data.length; i=i+1){
+                        $("tbody").append("<tr><th scope='row'>"+data[i].bookId+"</th><td>"+data[i].bName+"</td><td>"+data[i].bGenre+"</td><td>"+data[i].bAuthor+"</td><td><button id='add' type='button' class='btn btn-primary btn-xs' onclick='addBook("+data[i].bookId+","+data[i].bookId+")'>Add To Library</button></td><td><button id='edit' type='button' class='btn btn-danger btn-xs' onclick='editBook("+data[i].bookId+")' >Edit</button></td><td><button id='delete' type='button' class='btn btn-danger btn-xs' onclick='removeCSUMBBook("+data[i].bookId+")'>Delete</button></td></tr>");
+                    }
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                }
+                
+                });//ajax
+            }
+            function addBookCSUMBLB(name,genre,author){
+                
+                if (name!==""&&genre!==""&&author!==""){
+                   $.ajax({
+                        type: "POST",
+                        url: "api/addBookCSUMB.php",//USE checkUser 
+                        dataType: "", //Need to specify the format
+                        data: {"name":name, "genre":genre, "author":author},
+                        success: function(data,status) {
+                        alert("Book has been added!")
+                        window.location.href = 'adminCSUMB.php';
+                    },
+                    complete: function(data,status) { //optional, used for debugging purposes
+                        //alert(status);
+                    }
+                    
+                    });//ajax
+                }else{
+                    alert("You have an empty textbox!")
+                }
+            }
+            
             function checkUser(email,password){
                 $.ajax({
                     type: "POST",
@@ -82,6 +151,39 @@
                 
                 });//ajax
             }
+            function removeCSUMBBook(bookId){
+                alert(bookId);
+                $.ajax({
+                type: "POST",
+                url: "api/removeBook.php",
+                dataType: "", //Need to specify the format
+                data: {"bookId":bookId},
+                success: function(data,status) {
+                 alert("Book Removed");
+                 $("tbody").html("");
+                 csumbLibrary();
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                }
+                
+                });//ajax
+            }
+            function editBook(bookId){
+                $.ajax({
+                type: "POST",
+                url: "api/editLibrary.php",
+                dataType: "json", //Need to specify the format
+                data: {"bookId":bookId},
+                success: function(data,status) {
+                   
+                },
+                complete: function(data,status) { //optional, used for debugging purposes
+                    //alert(status);
+                }
+                
+                });//ajax
+            }
             function addBook(bookId){
                 //alert("bruh");
                 $.ajax({
@@ -93,7 +195,7 @@
                     alert("A book was added to your library."); 
                 },
                 complete: function(data,status) { //optional, used for debugging purposes
-                    alert(status);
+                    //alert(status);
                 }
                 
                 });//ajax
@@ -108,7 +210,7 @@
                 data: {},
                 success: function(data,status) {
                     for(var i=0; i<data.length; i=i+1){
-                        $("tbody").append("<tr><th scope='row'>"+data[i].bookId+"</th><td>"+data[i].bName+"</td><td>"+data[i].bGenre+"</td><td>"+data[i].bAuthor+"</td><td><button type='button' class='btn btn-primary btn-xs' onclick='addBook("+data[i].bookId+","+data[i].bookId+")'>Add To Library</button></td><td><button id='delete' type='button' class='btn btn-danger btn-xs' onclick=''>Delete</button></td></tr>");
+                        $("tbody").append("<tr><th scope='row'>"+data[i].bookId+"</th><td>"+data[i].bName+"</td><td>"+data[i].bGenre+"</td><td>"+data[i].bAuthor+"</td><td><button id='add' type='button' class='btn btn-primary btn-xs' onclick='addBook("+data[i].bookId+","+data[i].bookId+")'>Add To Library</button></td><td><button id='edit' type='button' class='btn btn-danger btn-xs' onclick='editBook("+data[i].bookId+")' >Edit</button></td><td><button id='delete' type='button' class='btn btn-danger btn-xs' onclick='removeCSUMBBook("+data[i].bookId+")'>Delete</button></td></tr>");
                     }
                 },
                 complete: function(data,status) { //optional, used for debugging purposes
@@ -130,8 +232,24 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-item nav-link" href="csumbLibrary.php">Home</a>
-              <a class="nav-item nav-link" href="userLibrary.php" href="#loginInfoModal">Your Library</a>
+              <a class="nav-item nav-link" href="userLibrary.php" role="button" onclick="adminSignin()">Your Library</a>
+              <a class="nav-item nav-link" href="adminSignIn.php">Admin Login</a>
+              <ul class="navbar-nav mr-auto">
+                 <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#" onclick='azOrder()'>A-Z</a>
+                      <a class="dropdown-item" href="#" onclick='zaOrder()'>Z-A</a>
+                    </div>
+                  </li>
+              </ul>
+                <form class="form-inline my-2 my-lg-0" id="search">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
           </div>
         </nav>
-        
+        <button type="button" class="btn btn-primary" id="addButton" onclick="location.href='addNewBook.php'">Add New Book</button>

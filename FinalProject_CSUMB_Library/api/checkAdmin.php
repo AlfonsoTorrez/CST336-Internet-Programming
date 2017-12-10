@@ -10,9 +10,14 @@
         $statement->execute();
         $userId = $statement->fetch(PDO::FETCH_ASSOC);
         
-        //print_r($books);
-    
-        echo json_encode($userId);
+        if($userId['userId'] == "1"){
+            header("Location: ../adminCSUMB.php"); 
+        }else{
+            //echo $userId['userId'];
+            echo ("Incorrect email or password.");
+            echo "<br>";
+            echo "<a class='nav-item nav-link' href='../adminSignIn.php'>Go Back To Admin Page</a>";
+        }
     }
-    checkUser($_POST['userEmail'],SHA1($_POST['userPassword'])); 
+    checkUser($_POST['email'],SHA1($_POST['password'])); 
 ?>

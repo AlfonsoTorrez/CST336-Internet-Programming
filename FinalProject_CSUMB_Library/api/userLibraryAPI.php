@@ -1,7 +1,4 @@
 <?php
-//Add a db connection to to display the users library database
-//Getting a users library
-//SELECT * FROM `fp_userlibrary` NATURAL JOIN `fp_csumblibrary` WHERE userId="11" 
     function books($userId){
         include '../dbConnectionFP.php';
         $conn = getDatabaseConnection();
