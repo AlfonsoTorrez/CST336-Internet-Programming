@@ -6,7 +6,7 @@ The SlothPage is a website that I created to practice using JavaScript. The site
 
 ### Screenshots:
 
-![Homepage](http://i67.tinypic.com/2zjcb55.png)
+![Homepage](http://i67.tinypic.com/2w32wxe.png)
 + 
 
 ![Using Sloth Picture Button]()
