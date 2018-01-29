@@ -7,10 +7,13 @@ The SlothPage is a website that I created to practice using JavaScript. The site
 ### Screenshots:
 
 ![Homepage](http://i67.tinypic.com/2w32wxe.png)
-+ Stuff
+Image Above:
++ Homepage of the SlothPage displays a clean navigation bar that is brought to you by  using Bootstraps. Inside the navigation bar is the two buttons which both display separate information. The bar also contains a text field that gives users an option to enter a number that will display the amount of sloth images, depending on the number the user enters. 
 
 ![Using Sloth Picture Button](http://i65.tinypic.com/29wl4yv.png)
-+ Stuff 2
+Image Above:
++ The image displays what happens when the user clicks on the “Sloth Picture” button. 
 
 ![Using Sloth Fact Button](http://i67.tinypic.com/fk1soz.png)
-+ Stuff 3
+Image Above:
++ The image displays what happens when the user clicks on the “Sloth Fact” button. 
