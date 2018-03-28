@@ -15,7 +15,7 @@ BlockBuster 2.0 was a team collobartation between 4 group members. The site was 
 
 ![Homepage](http://i66.tinypic.com/2dt4x83.png)
 
-+
++ First page you will see when you enter the site.The layout uses bootstraps in order to give the site a modern looking navigation bar. 
 
 ![Preview](http://i65.tinypic.com/5yauxk.png)
 
