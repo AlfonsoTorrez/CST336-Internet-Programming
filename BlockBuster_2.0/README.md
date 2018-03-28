@@ -17,25 +17,31 @@ BlockBuster 2.0 was a team collobartation between 4 group members. The site was 
 
 + First page you will see when you enter the site.The layout uses bootstraps in order to give the site a modern looking navigation bar. 
 
+
 ![Preview](http://i65.tinypic.com/5yauxk.png)
 
 + Clicking on the "Preview" button on an corresponding row of a movie will reveal an info window about the movie the users has chosen to click on. 
+
 
 ![Popular](http://i64.tinypic.com/20qjd6e.png)
 
 + On the navigation bar there is a button titled as "Popular" that will show the top 10 popular movies on our site.
 
+
 ![Checkout](http://i64.tinypic.com/vya0wz.png)
 
 + Clicking on the “Checkout” button on the navigation bar will bring you to the “Shopping Cart” window that will show you the movie that you have chosen to rent. 
+
 
 ![Random](http://i68.tinypic.com/2v34nti.png)
 
 + A random feature was also added to our site, which is located on the navigation bar. This feature would be beneficial for people who are not sure about what movie they would like to choose. 
 
+
 ![Drop Down Menu](http://i65.tinypic.com/axlhjm.png)
 
 + We have created a drop down menu titled “More” that lets a user display movies by length, year they came out, and alphabetical order. 
+
 
 ![Search by Genre](http://i65.tinypic.com/2v9stb5.png)
 
