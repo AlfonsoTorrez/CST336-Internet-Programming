@@ -3,7 +3,7 @@
 http://alftorres-cst336.herokuapp.com/BlockBuster_2.0/index.php
 
 ### Overview:
-BlockBuster 2.0 was a team collobartation between 4 group members. The site was created to imitate a movie rental website. The site allows a user to choose a movie that is listed in our database. Once a user chooses a movie, information is sent to a movie API to get a picture and a bio on the movie that the user chose. During the creation of the application I learned how to use the following technologies:
+BlockBuster 2.0 was a team collaboration between 4 group members. The site was created to imitate a movie rental website. The site allows a user to choose a movie that is listed in our database. Once a user chooses a movie, information is sent to a movie API to get a picture and a bio on the movie that the user chose. During the creation of the application I learned how to use the following technologies:
 
 + phpMyAdmin
 + Cloud 9
